@@ -1,0 +1,50 @@
+﻿@model AssignmentTest.Models.Detail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.first_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Of_Birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Of_Birth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feesOwed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feesOwed)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

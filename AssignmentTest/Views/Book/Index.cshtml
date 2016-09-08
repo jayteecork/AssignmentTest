@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AssignmentTest.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Buy and Sell your Books Here</h2>
+
+<p>
+    @Html.ActionLink("Add a New Book", "Create") 
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.condition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.condition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit this entry", "Edit", new { id=item.bookId }) |
+            @Html.ActionLink("Buy this Book", "Purchase", new { id = item.bookId }) |
+            @Html.ActionLink("Sell a similar book", "Create", new { id=item.bookId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.bookId })
+        </td>
+    </tr>
+}
+
+</table>
+<center><b></b></center>

@@ -1,0 +1,55 @@
+﻿@model AssignmentTest.Models.Course
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credits)
+        </dd>
+        
+            @foreach (var item in Model.Instructors)
+            {
+                <dt>
+                    Teacher Name
+                </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.HireDate)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.HireDate)
+                    </dd>
+
+                
+            }
+
+        
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
